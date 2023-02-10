@@ -1,10 +1,19 @@
-<div class="navigation">
-    <a class="button">
-        <img src="https://cdn-icon-png.flaticon.com/512/3135/3135715.png">
-        <div class="logout" (click)="signOutWithCognito()">Se Déconnecter</div>
-    </a>
+<div class="main-panel">
+      <div class="navbar-dashboard">DASHBOARD</div>
+      <div class="button-exit">
+          <button mat-button [matMenuTriggerFor]="exit">
+            <div class="photo">
+              <img src="../assets/img/anime3.png">
+              <span class="caret"></span>
+            </div>
+          </button>
+      </div>
+      <mat-menu #exit="matMenu">
+        <button mat-menu-item>Profils</button>
+        <button mat-menu-item>Paramètres</button>
+        <span class="dropdown-divider"></span>
+        <button mat-menu-item (click)="signOutWithCognito()">Déconnexion</button>
+      </mat-menu>
+  <iframe src="http://192.168.70.2:3000/d-solo/8DZ31-Lmz/grafanaproject?orgId=1&from=1675439075651&to=1676058275651&theme=dark&panelId=2" width="450" height="200" frameborder="0"></iframe>
 </div>
 
-<div class="user-content">
-    <h2>Suite De L'application</h2>
-</div>

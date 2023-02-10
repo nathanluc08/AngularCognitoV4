@@ -38,6 +38,13 @@ export class SignInComponent implements OnInit {
   private displayAlert(message: string) {
     this.alertMessage = message;
     this.showAlert = true;
-    console.log('displayAlert');
   }
+
+  loading = false;
+
+  load() {
+    this.loading = true;
+    setTimeout(() => this.loading = false, 3000);
+  }
+
 }
