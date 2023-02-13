@@ -13,6 +13,10 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatIconModule} from "@angular/material/icon";
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import {MatIconModule} from "@angular/material/icon";
     SignInComponent,
     MessageModalComponent,
     HomeComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import {MatIconModule} from "@angular/material/icon";
     MatMenuModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
