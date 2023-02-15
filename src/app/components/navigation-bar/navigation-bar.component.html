@@ -1,0 +1,20 @@
+<mat-sidenav-container class="main-panel">
+    <mat-toolbar class="color">
+      <div class="navbar-dashboard">DASHBOARD</div>
+      <div class="button-exit">
+        <button mat-button [matMenuTriggerFor]="exit">
+          <div class="photo">
+            <img src="../assets/img/anime3.png" alt="exit">
+            <span class="caret"></span>
+          </div>
+        </button>
+      </div>
+      <mat-menu #exit="matMenu">
+        <button mat-menu-item class="item">Profils</button>
+        <button mat-menu-item class="item">Paramètres</button>
+        <span class="dropdown-divider"></span>
+        <button mat-menu-item class="item" (click)="signOutWithCognito()">Déconnexion</button>
+      </mat-menu>
+    </mat-toolbar>
+    <app-dashboard></app-dashboard>
+</mat-sidenav-container>

@@ -6,25 +6,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
-import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatIconModule} from "@angular/material/icon";
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import {ApiServerService} from "./services/api-server.service";
+import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
+import { PieDBComponent } from './charts/pie-db/pie-db.component';
+import { PieServerComponent } from './charts/pie-server/pie-server.component';
+import { PieDBBackupComponent } from './charts/pie-dbbackup/pie-dbbackup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     MessageModalComponent,
-    HomeComponent,
     NavigationBarComponent,
+    DashboardComponent,
+    PieDBComponent,
+    PieServerComponent,
+    PieDBBackupComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +49,12 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

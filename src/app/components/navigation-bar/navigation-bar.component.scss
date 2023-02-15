@@ -1,0 +1,62 @@
+img
+{
+  max-width: 100%;
+}
+
+.photo
+{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 10px;
+  margin-top: 8px
+}
+
+.navbar-dashboard
+{
+  color: white;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 25px
+}
+.color
+{
+  background:linear-gradient(#1e1e2f,#1e1e2e)
+}
+
+.main-panel
+{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-top: 5px solid;
+  border-image: linear-gradient(to right, #ff512f, #f09819) 1 0 0 0;
+  background: linear-gradient(#1e1e2f,#1e1e24)
+}
+
+.caret
+{
+  position: absolute;
+  color: white;
+  left: 80%;
+  top: 55%;
+  border-top: 5px dashed;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  margin-left: 5px
+}
+
+.button-exit
+{
+  position : absolute;
+  top: 10px;
+  right: 40px
+}
+
+.item
+{
+  font-size: 13px;
+  text-align: center;
+}
+

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Amplify, { Auth } from 'aws-amplify';
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 
@@ -19,15 +19,19 @@ export class CognitoService {
     this.authenticationSubject = new BehaviorSubject<boolean>(false);
   }
 
-  public getUser() : Promise<any> {
+  public getUser(): Promise<any> {
     return Auth.currentUserInfo();
   }
 
-  public signIn(user: User) : Promise<any> {
+  public signIn(user: User): Promise<any> {
     return Auth.signIn(user.email, user.password);
   }
 
-  public signOut() : Promise<any> {
+  public signOut(): Promise<any> {
     return Auth.signOut();
+  }
+
+  public getToken(){
+    return Auth.currentSession()
   }
 }
