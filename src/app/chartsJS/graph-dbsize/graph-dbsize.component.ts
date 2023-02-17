@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {resSubject} from "../../services/api-server.service";
-import {Chart} from "chart.js";
+import { resSubject } from "../../services/api-server.service";
+import { Chart } from "chart.js";
 
 @Component({
   selector: 'app-graph-dbsize',
@@ -108,7 +108,6 @@ export class GraphDBSizeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.getGraphDBSize()
   }
 }

@@ -46,5 +46,4 @@ export class SignInComponent implements OnInit {
     this.loading = true;
     setTimeout(() => this.loading = false, 3000);
   }
-
 }

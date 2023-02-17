@@ -17,5 +17,4 @@ export class MessageModalComponent {
   modalCloseClicked(){
     this.modalClose.emit(true);
   }
-
 }

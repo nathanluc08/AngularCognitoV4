@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Amplify, { Auth } from 'aws-amplify';
-import {BehaviorSubject} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 
@@ -15,7 +15,6 @@ export class CognitoService {
     Amplify.configure({
       Auth: environment.cognito
     });
-
     this.authenticationSubject = new BehaviorSubject<boolean>(false);
   }
 
