@@ -1,20 +1,14 @@
 <div class="grid-container">
   <mat-grid-list cols="3" rowHeight="350px">
+
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
             Databases
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
+        <mat-card-content>
           <app-pie-db></app-pie-db>
         </mat-card-content>
       </mat-card>
@@ -25,16 +19,9 @@
         <mat-card-header>
           <mat-card-title>
             Servers
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
+        <mat-card-content>
           <app-pie-server></app-pie-server>
         </mat-card-content>
       </mat-card>
@@ -45,6 +32,34 @@
         <mat-card-header>
           <mat-card-title>
             DB Backups
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-pie-dbbackup></app-pie-dbbackup>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            DB Size
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-graph-dbsize></app-graph-dbsize>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<!-- <mat-grid-tile [colspan]="3" [rowspan]="3">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            DB Size
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -55,9 +70,8 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <app-pie-dbbackup></app-pie-dbbackup>
+          <app-graph-dbsize></app-graph-dbsize>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-  </mat-grid-list>
-</div>
+  </mat-grid-list> -->

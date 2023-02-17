@@ -14,8 +14,7 @@ export class PieDBBackupComponent implements OnInit {
     resSubject.subscribe(res => {
       let backpiedbbackup = res.body.pie_db_backup.map((test: any) => test.back);
       let countpiedbbackup = res.body.pie_db_backup.map((test: any) => test.count);
-
-      console.log('test.')
+      let colorpiedbbackup = res.body.pie_db_backup.map((test: any) => test.Color);
 
       this.chartDBBackup = new Chart('canvasDBBackup', {
         type: 'doughnut',
@@ -24,7 +23,7 @@ export class PieDBBackupComponent implements OnInit {
           datasets: [
             {
               data: countpiedbbackup,
-              backgroundColor: ['#434', '#1845ad'],
+              backgroundColor: [colorpiedbbackup[0],colorpiedbbackup[1],colorpiedbbackup[2],colorpiedbbackup[3]],
               fill: false,
               borderWidth: 1,
             },

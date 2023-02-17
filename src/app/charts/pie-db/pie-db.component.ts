@@ -14,6 +14,7 @@ export class PieDBComponent implements OnInit {
     resSubject.subscribe(res => {
       let statuspiedb = res.body.pie_db.map((test: any) => test.Status);
       let countpiedb = res.body.pie_db.map((test: any) => test.count);
+      let colorpiedb = res.body.pie_db.map((test: any) => test.Color);
 
       this.chartDB = new Chart('canvasDB', {
         type: 'doughnut',
@@ -22,7 +23,7 @@ export class PieDBComponent implements OnInit {
           datasets: [
             {
               data: countpiedb,
-              backgroundColor: [ '#1845ad','#ff512f'],
+              backgroundColor: [colorpiedb[0],colorpiedb[1]],
               fill: false,
               borderWidth: 1,
             },

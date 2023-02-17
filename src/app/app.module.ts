@@ -24,6 +24,7 @@ import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import { PieDBComponent } from './charts/pie-db/pie-db.component';
 import { PieServerComponent } from './charts/pie-server/pie-server.component';
 import { PieDBBackupComponent } from './charts/pie-dbbackup/pie-dbbackup.component';
+import { GraphDBSizeComponent } from './charts/graph-dbsize/graph-dbsize.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PieDBBackupComponent } from './charts/pie-dbbackup/pie-dbbackup.compone
     PieDBComponent,
     PieServerComponent,
     PieDBBackupComponent,
+    GraphDBSizeComponent,
   ],
   imports: [
     BrowserModule,

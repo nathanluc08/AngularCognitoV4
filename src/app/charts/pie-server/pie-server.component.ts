@@ -14,8 +14,7 @@ export class PieServerComponent implements OnInit {
     resSubject.subscribe(res => {
       let statuspieserver = res.body.pie_server.map((test: any) => test.Status);
       let countpieserver = res.body.pie_server.map((test: any) => test.count);
-
-      console.log('test.')
+      let colorpieserver = res.body.pie_server.map((test: any) => test.Color);
 
       this.chartServer = new Chart('canvasServer', {
         type: 'doughnut',
@@ -24,7 +23,7 @@ export class PieServerComponent implements OnInit {
           datasets: [
             {
               data: countpieserver,
-              backgroundColor: ['#468', '#1845ad'],
+              backgroundColor: [colorpieserver[0],colorpieserver[1]],
               fill: false,
               borderWidth: 1,
             },
