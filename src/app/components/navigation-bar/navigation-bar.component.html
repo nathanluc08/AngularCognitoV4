@@ -4,17 +4,17 @@
       <div class="button-exit">
         <button mat-button [matMenuTriggerFor]="exit">
           <div class="photo">
-            <img src="../assets/img/anime3.png" alt="exit">
+            <img src="./assets/img/anime3.png" alt="exit">
             <span class="caret"></span>
           </div>
         </button>
       </div>
       <mat-menu #exit="matMenu">
-        <button mat-menu-item class="item">Profils</button>
-        <button mat-menu-item class="item">Paramètres</button>
+        <button mat-menu-item class="item" routerLink="/dashboardChartJS">ChartJS</button>
+        <button mat-menu-item class="item" routerLink="/dashboardGC">GoogleCharts</button>
         <span class="dropdown-divider"></span>
         <button mat-menu-item class="item" (click)="signOutWithCognito()">Déconnexion</button>
       </mat-menu>
     </mat-toolbar>
-    <app-dashboardChartJS></app-dashboardChartJS>
+  <router-outlet></router-outlet>
 </mat-sidenav-container>

@@ -1,4 +1,6 @@
 <div class="grid-container">
+  <div class="dashboard">GoogleCharts</div>
+  <img class="photo" src="./assets/img/LogoGoogleCharts.png" alt="exit">
   <mat-grid-list cols="3" rowHeight="350px">
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -9,7 +11,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-pie-db></app-pie-db>
+          <app-pie-db-GoogleCharts></app-pie-db-GoogleCharts>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -22,7 +24,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-pie-server></app-pie-server>
+          <app-pie-dbserver-GoogleCharts></app-pie-dbserver-GoogleCharts>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -35,7 +37,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-pie-dbbackup></app-pie-dbbackup>
+          <app-pie-dbbackup-GoogleCharts></app-pie-dbbackup-GoogleCharts>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -48,30 +50,8 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-graph-dbsize></app-graph-dbsize>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-
-<!-- <mat-grid-tile [colspan]="3" [rowspan]="3">
-      <mat-card class="dashboardChartJS-card">
-        <mat-card-header>
-          <mat-card-title>
-            DB Size
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboardChartJS-card-content">
-          <app-graph-dbsize></app-graph-dbsize>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list> -->

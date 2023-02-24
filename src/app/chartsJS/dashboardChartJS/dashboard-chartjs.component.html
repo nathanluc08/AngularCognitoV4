@@ -1,0 +1,59 @@
+<div class="grid-container">
+  <div class="dashboard">ChartJS
+  </div>
+  <img class="photo" src="./assets/img/LogoChartJS.png" alt="exit">
+  <mat-grid-list cols="3" rowHeight="350px">
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Databases
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-pie-db></app-pie-db>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Servers
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-pie-server></app-pie-server>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            DB Backups
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-pie-dbbackup></app-pie-dbbackup>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            DB Size
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-graph-dbsize></app-graph-dbsize>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

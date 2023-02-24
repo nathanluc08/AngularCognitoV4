@@ -2,18 +2,18 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiServerService} from "../../services/api-server.service";
 @Component({
   selector: 'app-dashboardChartJS',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  templateUrl: './dashboard-chartjs.component.html',
+  styleUrls: ['./dashboard-chartjs.component.scss']
 })
-export class DashboardComponent implements OnInit, OnDestroy{
+export class DashboardChartJSComponent implements OnInit, OnDestroy{
 
   constructor(private _apiServer:ApiServerService) {}
 
   getPieServer() {
-  this._apiServer.Pie_DB();
+  this._apiServer.getApi();
   }
   ngOnInit(): void {
-    this._apiServer.Pie_DB();
+    this._apiServer.getApi();
     this.callMethod();
     this.id = window.setInterval(() => { this.callMethod() }, 5000);
   }

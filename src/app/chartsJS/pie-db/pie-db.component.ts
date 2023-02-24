@@ -41,7 +41,11 @@ export class PieDBComponent implements OnInit {
     });
   }
 
+  test(){
+    console.log(this.chartDB)
+  }
   ngOnInit(): void {
+    this.test()
     this.getPieDB()
   }
 }

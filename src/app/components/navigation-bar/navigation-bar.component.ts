@@ -9,8 +9,7 @@ import { CognitoService } from "../../services/cognito.service";
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor(private router: Router, private cognitoService: CognitoService) {
-  }
+  constructor(private router: Router, private cognitoService: CognitoService) {}
 
   ngOnInit(): void {
     this.getUserDetails();
