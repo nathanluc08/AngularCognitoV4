@@ -14,7 +14,6 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
     this.getUserDetails();
   }
-
   private getUserDetails() {
     this.cognitoService.getUser()
       .then((user: any) => {

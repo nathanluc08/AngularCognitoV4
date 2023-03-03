@@ -29,6 +29,15 @@ export class PieServerComponent implements OnInit {
             },
           ]
         },
+        options: {
+          legend:{
+            position: 'right',
+            align: 'center',
+            labels: {
+              fontSize: 18,
+            }
+          }
+        }
       });
     });
   }

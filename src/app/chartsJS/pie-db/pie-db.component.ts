@@ -30,22 +30,18 @@ export class PieDBComponent implements OnInit {
           ]
         },
         options: {
-          plugins: {
-            datalabels: {
-              color: '#fff',
-              display: true,
-            },
-          },
+          legend:{
+            position: 'right',
+            align: 'center',
+            labels: {
+              fontSize: 18,
+            }
+          }
         }
       });
     });
   }
-
-  test(){
-    console.log(this.chartDB)
-  }
   ngOnInit(): void {
-    this.test()
     this.getPieDB()
   }
 }

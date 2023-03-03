@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {resSubject} from "../../services/api-server.service";
+import { resSubject } from "../../services/api-server.service";
 
 @Component({
   selector: 'app-pie-db-GoogleCharts',
@@ -26,7 +26,7 @@ export class PieDbGoogleChartsComponent implements OnInit {
       width: 1000,
       height: 270,
       options: {
-        pieHole: 0.5,
+        pieHole: 0.3,
         colors: [this.colorpiedbgc[0], this.colorpiedbgc[1]],
       }
     };

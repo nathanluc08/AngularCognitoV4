@@ -1,6 +1,5 @@
 <div class="grid-container">
-  <div class="dashboard">ChartJS
-  </div>
+  <div class="dashboard">ChartJS</div>
   <img class="photo" src="./assets/img/LogoChartJS.png" alt="exit">
   <mat-grid-list cols="3" rowHeight="350px">
 
@@ -55,5 +54,14 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-content>
+          <app-graph-dbsize2></app-graph-dbsize2>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
   </mat-grid-list>
 </div>

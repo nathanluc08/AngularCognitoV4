@@ -10,8 +10,9 @@ import { CognitoService } from 'src/app/services/cognito.service';
 })
 export class SignInComponent implements OnInit {
   user: any;
-  alertMessage:string = '';
-  showAlert:boolean = false;
+  alertMessage: string = '';
+  showAlert: boolean = false;
+  isLoading: boolean = false;
   constructor( private router: Router, private cognitoService: CognitoService) {}
 
   ngOnInit(): void {
@@ -40,10 +41,8 @@ export class SignInComponent implements OnInit {
     this.showAlert = true;
   }
 
-  loading = false;
-
   load() {
-    this.loading = true;
-    setTimeout(() => this.loading = false, 3000);
+    this.isLoading = true;
+    setTimeout(() => this.isLoading = false, 3000);
   }
 }

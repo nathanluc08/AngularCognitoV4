@@ -31,12 +31,14 @@
               "@aws-crypto/sha256-browser",
               "fast-xml-parser",
               "@aws-crypto/crc32",
+              "crypto-js/core",
               "crypto-js/hmac-sha256",
               "crypto-js/lib-typedarrays",
               "isomorphic-unfetch",
               "js-cookie",
               "@aws-amplify/ui",
-              "cookie"
+              "cookie",
+              "chart.js"
             ],
             "outputPath": "dist/angular-cognito-v4",
             "index": "src/index.html",

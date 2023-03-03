@@ -27,6 +27,7 @@ export class GraphDBSizeComponent implements OnInit {
 
       let f = -1;
       let t = 0;
+
       for(let i=0; i<(uuidgraphsize.length); i++)
       {
           if (dategraphsize[i].indexOf("T14") != -1 && t == 0){
@@ -36,28 +37,27 @@ export class GraphDBSizeComponent implements OnInit {
           if (uuidgraphsize[i] == "07abc826-64c0-48c5-8749-c4d080807b2a" && (dategraphsize[i].indexOf("T14") != -1)) {
             sizegraphsize1[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[1] = namegraphsize[i]
-            dategraphsize1[f] = dategraphsize[i]
+            dategraphsize1[f] = dategraphsize[i].substr(0, 10)
           }
           if (uuidgraphsize[i] == "1895a5ad-3fbe-4e51-a2be-e2bcba7771fc" && (dategraphsize[i].indexOf("T14") != -1)) {
             sizegraphsize2[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[2] = namegraphsize[i]
-            dategraphsize1[f] = dategraphsize[i]
-            console.log(sizegraphsize2)
+            dategraphsize1[f] = dategraphsize[i].substr(0, 10)
           }
           if (uuidgraphsize[i] == "f9d2442d-1e3b-43b2-aa0d-b418309a4b54" && (dategraphsize[i].indexOf("T14") != -1)) {
             sizegraphsize3[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[3] = namegraphsize[i]
-            dategraphsize1[f] = dategraphsize[i]
+            dategraphsize1[f] = dategraphsize[i].substr(0, 10)
           }
           if (uuidgraphsize[i] == "c2ba5d87-fab3-4ac7-b7a6-8eb9dc3b7392" && (dategraphsize[i].indexOf("T14") != -1)) {
             sizegraphsize4[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[4] = namegraphsize[i]
-            dategraphsize1[f] = dategraphsize[i]
+            dategraphsize1[f] = dategraphsize[i].substr(0, 10)
           }
           if (uuidgraphsize[i] == "67045c03-4a02-429f-bace-25d87c559fb3" && (dategraphsize[i].indexOf("T14") != -1)) {
             sizegraphsize5[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[5] = namegraphsize[i]
-            dategraphsize1[f] = dategraphsize[i]
+            dategraphsize1[f] = dategraphsize[i].substr(0, 10)
           }
           if (dategraphsize[i].indexOf("T14") == -1){
             t = 0
@@ -108,6 +108,11 @@ export class GraphDBSizeComponent implements OnInit {
         },
         options: {
           maintainAspectRatio: false,
+          legend:{
+            labels: {
+              fontSize: 18,
+            }
+          }
         }
       });
     });
