@@ -34,6 +34,7 @@ import { ApiServerService } from "./services/api-server.service";
 import { PieDbbackupGoogleCharts } from './GoogleCharts/pie-dbbackup-GoogleCharts/pie-dbbackup-GoogleCharts';
 import { PieDbserverGoogleChartsComponent } from './GoogleCharts/pie-dbserver-GoogleCharts/pie-dbserver-GoogleCharts.component';
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
+import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.co
     PieDbbackupGoogleCharts,
     PieDbserverGoogleChartsComponent,
     GraphDBSize2Component,
+    GraphDiskUsageComponent,
   ],
   imports: [
     BrowserModule,

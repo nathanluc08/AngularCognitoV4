@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiServerService, resSubject} from "../../services/api-server.service";
+import { ApiServerService, resSubject } from "../../services/api-server.service";
 import { Chart } from "chart.js";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-graph-dbsize2',
@@ -25,7 +25,6 @@ export class GraphDBSize2Component implements OnInit {
         this.filterData(response);
       } else {
         this.filteredOptions = [];
-        console.log('data is ', this.filteredOptions);
       }
     })
   }
@@ -36,12 +35,11 @@ export class GraphDBSize2Component implements OnInit {
   }
 
   onSelFunc(item: any){
-    console.log(item);
+    this._apiServer.getApi();
     this.getGraphDBSize2(item);
   }
 
   getGraphDBSize2(item: string) {
-    this._apiServer.getApi();
     resSubject.subscribe(res => {
       let dategraphdbsize = res.body.graph_db_size.map((test: any) => test.date_trunc);
       let sizegraphdbsize = res.body.graph_db_size.map((test: any) => test.Size);
@@ -55,8 +53,6 @@ export class GraphDBSize2Component implements OnInit {
       let sizegraphdbsize5 = [];
       let namegraphdbsize1 = [];
       this.dategraphdbsize1 = [];
-
-      console.log(item)
 
       for (let i = 0; i < (uuidgraphdbsize.length); i++) {
 
@@ -146,7 +142,10 @@ export class GraphDBSize2Component implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getGraphDBSize2("2023-03-03");
+    const Today: Date = new Date();
+    const DateToday: string = Today.toISOString().slice(0, 10);
+    console.log(DateToday)
+    this.getGraphDBSize2(DateToday);
     this.initForm();
   }
 }

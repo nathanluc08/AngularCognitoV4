@@ -63,5 +63,18 @@
       </mat-card>
     </mat-grid-tile>
 
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Disk Usage
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-graph-disk-usage></app-graph-disk-usage>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
   </mat-grid-list>
 </div>

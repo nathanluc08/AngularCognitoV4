@@ -23,6 +23,7 @@ export class ApiServerService {
       };
       this._http.get("https://apidev.cartesoft.lu/app/dashboard", httpOptions).subscribe( res => {
         resSubject.next(res);
+        console.log(res)
       })
     })
   }
