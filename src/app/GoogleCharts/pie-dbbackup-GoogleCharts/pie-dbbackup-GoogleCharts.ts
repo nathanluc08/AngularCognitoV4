@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {resSubject} from "../../services/api-server.service";
+import { resSubject } from "../../services/api-server.service";
 
 @Component({
   selector: 'app-pie-dbbackup-GoogleCharts',

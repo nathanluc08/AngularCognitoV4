@@ -6,7 +6,7 @@ import { DashboardChartJSComponent } from "./chartsJS/dashboardChartJS/dashboard
 import { DashboardGoogleChartsComponent } from "./GoogleCharts/dashboard-GoogleCharts/dashboard-GoogleCharts.component";
 
 const routes: Routes = [
-  { path:'', component: NavigationBarComponent,
+  { path:'navbar', component: NavigationBarComponent,
     children:
       [
         { path:'', redirectTo:'dashboardChartJS', pathMatch:'full' },

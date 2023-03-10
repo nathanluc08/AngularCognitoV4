@@ -25,7 +25,7 @@ export class SignInComponent implements OnInit {
     if (this.user && this.user.email && this.user.password) {
       this.cognitoService.signIn(this.user)
       .then(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/navbar']);
       })
       .catch((error:any) => {
         this.displayAlert(error.message);

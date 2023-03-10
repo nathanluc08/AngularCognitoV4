@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GraphDBSize2Component } from './graph-dbsize2.component';
 
 describe('GraphDBSize2Component', () => {

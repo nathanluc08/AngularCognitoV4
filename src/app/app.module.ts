@@ -35,6 +35,7 @@ import { PieDbbackupGoogleCharts } from './GoogleCharts/pie-dbbackup-GoogleChart
 import { PieDbserverGoogleChartsComponent } from './GoogleCharts/pie-dbserver-GoogleCharts/pie-dbserver-GoogleCharts.component';
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
 import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
+import { BnNgIdleService } from "bn-ng-idle";
 
 @NgModule({
   declarations: [
@@ -74,9 +75,9 @@ import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-
     GoogleChartsModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
-  providers: [ApiServerService],
+  providers: [ApiServerService, BnNgIdleService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
