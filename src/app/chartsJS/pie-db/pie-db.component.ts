@@ -23,7 +23,7 @@ export class PieDBComponent implements OnInit {
           datasets: [
             {
               data: countpiedb,
-              backgroundColor: [colorpiedb[0],colorpiedb[1]],
+              backgroundColor: colorpiedb,
               fill: false,
               borderWidth: 1,
             },

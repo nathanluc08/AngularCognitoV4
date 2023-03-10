@@ -27,7 +27,27 @@ export class GraphDBSizeComponent implements OnInit {
 
       let f = -1;
       let t = 0;
+      /*
+      let listuuid = Array.from(new Set(uuidgraphsize));
+      console.log(listuuid)
 
+      //for(let f=0; f<(listuuid.length); f++){
+        console.log(uuidgraphsize.length)
+
+        for(let i=0; i<(uuidgraphsize.length); i++){
+
+          console.log(listuuid[f])
+          if (uuidgraphsize[i] == "1895a5ad-3fbe-4e51-a2be-e2bcba7771fc") {
+
+            console.log(i)
+            sizegraphsize1[t] = (sizegraphsize[i] / 1048576)
+            namegraphsize1[1] = namegraphsize[i]
+            dategraphsize1[t] = dategraphsize[i].substr(0, 10)
+            t++;
+          }
+        }
+        console.log(uuidgraphsize)
+      }*/
       for(let i=0; i<(uuidgraphsize.length); i++)
       {
           if (dategraphsize[i].indexOf("T14") != -1 && t == 0){
@@ -54,7 +74,7 @@ export class GraphDBSizeComponent implements OnInit {
             namegraphsize1[4] = namegraphsize[i]
             dategraphsize1[f] = dategraphsize[i].substr(0, 10)
           }
-          if (uuidgraphsize[i] == "67045c03-4a02-429f-bace-25d87c559fb3" && (dategraphsize[i].indexOf("T14") != -1)) {
+          if (uuidgraphsize[i] == "a97b59f1-270e-40c3-b01a-025009fd8d7d" && (dategraphsize[i].indexOf("T14") != -1)) {
             sizegraphsize5[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[5] = namegraphsize[i]
             dategraphsize1[f] = dategraphsize[i].substr(0, 10)

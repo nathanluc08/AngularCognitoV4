@@ -23,7 +23,7 @@ export class PieDBBackupComponent implements OnInit {
           datasets: [
             {
               data: countpiedbbackup,
-              backgroundColor: [colorpiedbbackup[0],colorpiedbbackup[1],colorpiedbbackup[2],colorpiedbbackup[3]],
+              backgroundColor: colorpiedbbackup,
               fill: false,
               borderWidth: 1,
             },

@@ -23,7 +23,7 @@ export class PieServerComponent implements OnInit {
           datasets: [
             {
               data: countpieserver,
-              backgroundColor: [colorpieserver[0],colorpieserver[1]],
+              backgroundColor: colorpieserver,
               fill: false,
               borderWidth: 1,
             },
