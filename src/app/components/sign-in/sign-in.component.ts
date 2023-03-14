@@ -17,7 +17,6 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = {} as User;
-    console.log('ngOnInit');
   }
 
   signInWithCognito() {

@@ -38,7 +38,8 @@
               "js-cookie",
               "@aws-amplify/ui",
               "cookie",
-              "chart.js"
+              "chart.js",
+              "events"
             ],
             "outputPath": "dist/angular-cognito-v4",
             "index": "src/index.html",
@@ -61,8 +62,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",

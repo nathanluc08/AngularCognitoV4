@@ -1,0 +1,7 @@
+version : 0.1
+phases : 
+    install : 
+        commandes : 
+        - npm install 
+        - npm run build 
+        - aws s3 sync dist s3://angular-dev-app --delete
