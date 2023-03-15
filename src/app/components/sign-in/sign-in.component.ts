@@ -32,7 +32,7 @@ export class SignInComponent implements OnInit {
       })
     }
     else{
-      this.displayAlert("Please enter a valid email or password");
+      this.displayAlert("Please enter a valid email or password Update OK");
     }
   }
 
