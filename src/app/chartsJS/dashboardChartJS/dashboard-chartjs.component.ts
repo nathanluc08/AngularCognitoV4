@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class DashboardChartJSComponent implements OnInit, OnDestroy{
 
-  ExpirationTime = 1200000; // 8H = 28800000 // 10S = 10000
+  ExpirationTime = 600000; // 8H = 28800000 // 10S = 10000
   id = 0;
   constructor(private _apiServer:ApiServerService, private router: Router, private bnIdle: BnNgIdleService) {}
   getPieServer() {

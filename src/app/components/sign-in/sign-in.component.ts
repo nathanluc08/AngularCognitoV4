@@ -17,7 +17,6 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = {} as User;
-    console.log('ngOnInit2');
   }
 
   signInWithCognito() {
@@ -32,7 +31,7 @@ export class SignInComponent implements OnInit {
       })
     }
     else{
-      this.displayAlert("Please enter a valid email or password Update OK");
+      this.displayAlert("Please enter a valid email or password");
     }
   }
 
