@@ -24,6 +24,8 @@ export class SignInComponent implements OnInit {
     if (this.user && this.user.email && this.user.password) {
       this.cognitoService.signIn(this.user)
       .then(() => {
+        let TimeAtConnection = Date.now()
+        localStorage.setItem('TimeAtConnection', String(TimeAtConnection))
         this.router.navigate(['/navbar']);
       })
       .catch((error:any) => {
@@ -31,7 +33,7 @@ export class SignInComponent implements OnInit {
       })
     }
     else{
-      this.displayAlert("Please enter a valid email or password");
+      this.displayAlert("Adresse Mail Ou Mot De Passe Invalide");
     }
   }
 

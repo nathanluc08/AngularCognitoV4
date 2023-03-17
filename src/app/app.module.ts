@@ -17,7 +17,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from "@angular/common/http";
-import { GoogleChartsModule } from 'angular-google-charts';
 
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -28,11 +27,7 @@ import { PieDBComponent } from './chartsJS/pie-db/pie-db.component';
 import { PieServerComponent } from './chartsJS/pie-server/pie-server.component';
 import { PieDBBackupComponent } from './chartsJS/pie-dbbackup/pie-dbbackup.component';
 import { GraphDBSizeComponent } from './chartsJS/graph-dbsize/graph-dbsize.component';
-import { PieDbGoogleChartsComponent } from './GoogleCharts/pie-db-GoogleCharts/pie-db-GoogleCharts.component';
-import { DashboardGoogleChartsComponent } from './GoogleCharts/dashboard-GoogleCharts/dashboard-GoogleCharts.component';
 import { ApiServerService } from "./services/api-server.service";
-import { PieDbbackupGoogleCharts } from './GoogleCharts/pie-dbbackup-GoogleCharts/pie-dbbackup-GoogleCharts';
-import { PieDbserverGoogleChartsComponent } from './GoogleCharts/pie-dbserver-GoogleCharts/pie-dbserver-GoogleCharts.component';
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
 import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
 import { BnNgIdleService } from "bn-ng-idle";
@@ -47,11 +42,7 @@ import { BnNgIdleService } from "bn-ng-idle";
     PieServerComponent,
     PieDBBackupComponent,
     GraphDBSizeComponent,
-    PieDbGoogleChartsComponent,
-    DashboardGoogleChartsComponent,
     DashboardChartJSComponent,
-    PieDbbackupGoogleCharts,
-    PieDbserverGoogleChartsComponent,
     GraphDBSize2Component,
     GraphDiskUsageComponent,
   ],
@@ -72,7 +63,6 @@ import { BnNgIdleService } from "bn-ng-idle";
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
-    GoogleChartsModule,
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,

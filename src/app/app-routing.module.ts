@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { NavigationBarComponent } from "./components/navigation-bar/navigation-bar.component";
 import { DashboardChartJSComponent } from "./chartsJS/dashboardChartJS/dashboard-chartjs.component";
-import { DashboardGoogleChartsComponent } from "./GoogleCharts/dashboard-GoogleCharts/dashboard-GoogleCharts.component";
 
 const routes: Routes = [
   { path:'navbar', component: NavigationBarComponent,
@@ -11,11 +10,12 @@ const routes: Routes = [
       [
         { path:'', redirectTo:'dashboardChartJS', pathMatch:'full' },
         { path:'dashboardChartJS', component: DashboardChartJSComponent },
-        { path:'dashboardGC', component: DashboardGoogleChartsComponent },
       ]
   },
   { path:'sign-in', component: SignInComponent },
   { path:'**', component: SignInComponent },
+  { path:'', component: SignInComponent },
+
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
 <div class="modal">
-    <div class="modal-content">
-        <span class="close" (click)="modalCloseClicked()">&times;</span>
+      <form>
+        <mat-icon class="icon"> error_outline </mat-icon> <h3>Erreur Lors De La Connexion</h3>
         <p>{{message}}</p>
-    </div>
+        <div style="text-align:center">
+          <button mat-raised-button class="close" (click)="modalCloseClicked()">Close</button>
+        </div>
+      </form>
 </div>
