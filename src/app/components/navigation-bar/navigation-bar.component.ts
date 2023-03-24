@@ -11,8 +11,9 @@ import { BnNgIdleService } from "bn-ng-idle";
 
 export class NavigationBarComponent implements OnInit {
 
-  ExpirationTime = 1200000; // 8H = 28800000 // 10S = 10000
-  CheckInterval = 10000; // 60S
+  ExpirationTime = 100000; // 8H = 28800000 // 10S = 10000
+  CheckInterval = 10000; // 60S = 60000 // 10S = 10000
+  intervalID: any;
   constructor(private router: Router, private cognitoService: CognitoService, private bnIdle: BnNgIdleService) {}
 
   ngOnInit(): void {
@@ -39,16 +40,19 @@ export class NavigationBarComponent implements OnInit {
     this.bnIdle.startWatching(30).subscribe((isTimedOut: Boolean) => {
       if (isTimedOut) {
         console.log('session expired');
-        this.bnIdle.stopTimer();
-        this.router.navigate(['/sign-in']);
+        this.router.navigate(['/sign-in']).then(r => this.bnIdle.stopTimer());
       }
     })
   }
 
   initInterval() {
-    setInterval(() => {
+    this.intervalID = setInterval(() => {
       this.check();
     }, this.CheckInterval);
+  }
+
+  stop(){
+    clearInterval(this.intervalID);
   }
 
   check() {
@@ -58,6 +62,7 @@ export class NavigationBarComponent implements OnInit {
     let Timeout = TimeAtConnection + this.ExpirationTime - DateNow;
     console.log(Timeout)
     if (Timeout < 0)  {
+      this.stop()
       this.Idle()
     }
   }
