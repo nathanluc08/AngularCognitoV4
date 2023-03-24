@@ -29,3 +29,7 @@ jobs:
 
     - name: Build
       run: npm run build:prod
+      
+    - name: Deploy
+      if: success()
+      run: aws s3 sync ./dist/angular-cognito-v4 s3://angular-dev-app
