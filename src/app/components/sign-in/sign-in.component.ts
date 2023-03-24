@@ -32,8 +32,9 @@ export class SignInComponent implements OnInit {
         this.displayAlert(error.message);
       })
     }
-    else{
-      this.displayAlert("Adresse Mail Ou Mot De Passe Invalide");
+    else
+    {
+      this.displayAlert("Adresse Mail Ou Mot De Passe Invalide OK");
     }
   }
 
