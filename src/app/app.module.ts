@@ -27,10 +27,13 @@ import { PieDBComponent } from './chartsJS/pie-db/pie-db.component';
 import { PieServerComponent } from './chartsJS/pie-server/pie-server.component';
 import { PieDBBackupComponent } from './chartsJS/pie-dbbackup/pie-dbbackup.component';
 import { GraphDBSizeComponent } from './chartsJS/graph-dbsize/graph-dbsize.component';
-import { ApiServerService } from "./services/api-server.service";
+import { ApiDashboardService } from "./services/api-dashboard.service";
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
 import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
 import { BnNgIdleService } from "bn-ng-idle";
+import { ListServerComponent } from './Server/list-server/list-server.component';
+import { DashboardServerComponent } from './Server/dashboard-server/dashboard-server.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { BnNgIdleService } from "bn-ng-idle";
     DashboardChartJSComponent,
     GraphDBSize2Component,
     GraphDiskUsageComponent,
+    ListServerComponent,
+    DashboardServerComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,7 @@ import { BnNgIdleService } from "bn-ng-idle";
     MatInputModule,
     MatFormFieldModule,
   ],
-  providers: [ApiServerService, BnNgIdleService],
+  providers: [ApiDashboardService, BnNgIdleService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

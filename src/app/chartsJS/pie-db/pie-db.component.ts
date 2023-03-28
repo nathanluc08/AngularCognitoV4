@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { resSubject } from "../../services/api-server.service";
+import { resSubject } from "../../services/api-dashboard.service";
 import { Chart } from "chart.js";
 
 @Component({
@@ -30,13 +30,14 @@ export class PieDBComponent implements OnInit {
           ]
         },
         options: {
+          maintainAspectRatio: false,
           legend:{
             position: 'right',
             align: 'center',
             labels: {
               fontSize: 18,
             }
-          }
+          },
         }
       });
     });

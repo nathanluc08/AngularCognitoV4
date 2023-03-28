@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ApiServerService} from "../../services/api-server.service";
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {ApiDashboardService} from "../../services/api-dashboard.service";
 @Component({
   selector: 'app-dashboardChartJS',
   templateUrl: './dashboard-chartjs.component.html',
@@ -7,7 +7,7 @@ import {ApiServerService} from "../../services/api-server.service";
 })
 export class DashboardChartJSComponent implements OnInit, OnDestroy{
   id = 0;
-  constructor(private _apiServer:ApiServerService) {}
+  constructor(private _apiServer:ApiDashboardService) {}
   ngOnInit(): void {
     //this._apiServer.getApi();
     this.callMethod();

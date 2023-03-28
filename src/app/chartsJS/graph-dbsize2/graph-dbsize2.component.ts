@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiServerService, resSubject } from "../../services/api-server.service";
+import {Component, Input, OnInit} from '@angular/core';
+import { ApiDashboardService, resSubject } from "../../services/api-dashboard.service";
 import { Chart } from "chart.js";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
@@ -14,7 +14,7 @@ export class GraphDBSize2Component implements OnInit {
   chartDBSize2: any = [];
   filteredOptions: any;
   formGroup : FormGroup | any ;
-  constructor(private fb : FormBuilder, private _apiServer:ApiServerService){}
+  constructor(private fb : FormBuilder, private _apiServer:ApiDashboardService){}
   initForm(){
     this.formGroup = this.fb.group({
       'Date' : ['']

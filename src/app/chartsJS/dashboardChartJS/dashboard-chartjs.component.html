@@ -4,76 +4,39 @@
   <mat-grid-list cols="3" rowHeight="350px">
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Databases
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-pie-db></app-pie-db>
-        </mat-card-content>
-      </mat-card>
+      <app-card title="Databases">
+        <app-pie-db></app-pie-db>
+      </app-card>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Servers
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-pie-server></app-pie-server>
-        </mat-card-content>
-      </mat-card>
+      <app-card title="Servers">
+        <app-pie-server></app-pie-server>
+      </app-card>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            DB Backups
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-pie-dbbackup></app-pie-dbbackup>
-        </mat-card-content>
-      </mat-card>
+      <app-card title="DB Backups">
+        <app-pie-dbbackup></app-pie-dbbackup>
+      </app-card>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="3" [rowspan]="2">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            DB Size
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-graph-dbsize></app-graph-dbsize>
-        </mat-card-content>
-      </mat-card>
+      <app-card title="DB Size">
+        <app-graph-dbsize></app-graph-dbsize>
+      </app-card>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="3" [rowspan]="2">
-      <mat-card class="dashboard-card">
-        <mat-card-content>
-          <app-graph-dbsize2></app-graph-dbsize2>
-        </mat-card-content>
-      </mat-card>
+      <app-card title="DB Size">
+        <app-graph-dbsize2></app-graph-dbsize2>
+      </app-card>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="3" [rowspan]="2">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Disk Usage
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-graph-disk-usage></app-graph-disk-usage>
-        </mat-card-content>
-      </mat-card>
+      <app-card title="Disk Usage">
+        <app-graph-disk-usage></app-graph-disk-usage>
+      </app-card>
     </mat-grid-tile>
 
   </mat-grid-list>

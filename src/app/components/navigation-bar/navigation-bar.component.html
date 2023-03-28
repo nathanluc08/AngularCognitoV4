@@ -9,8 +9,15 @@
           </div>
         </button>
       </div>
+      <button mat-icon-button [matMenuTriggerFor]="notifications" (click)="getNotification()" class="notification">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <mat-menu #notifications="matMenu">
+          <span mat-menu-item class="item" *ngFor="let i of this.notification"> {{ i }} </span>
+      </mat-menu>
       <mat-menu #exit="matMenu">
         <button mat-menu-item class="item" routerLink="/navbar/dashboardChartJS">ChartJS</button>
+        <button mat-menu-item class="item" routerLink="/navbar/dashboardServer">Server</button>
         <mat-divider></mat-divider>
         <button mat-menu-item class="item" (click)="signOutWithCognito()">Déconnexion</button>
       </mat-menu>

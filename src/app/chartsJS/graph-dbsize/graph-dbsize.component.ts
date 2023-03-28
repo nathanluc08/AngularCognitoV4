@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { resSubject } from "../../services/api-server.service";
+import { resSubject } from "../../services/api-dashboard.service";
 import { Chart } from "chart.js";
 
 @Component({

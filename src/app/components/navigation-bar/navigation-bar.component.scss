@@ -20,6 +20,13 @@ img
   margin-top: 10px;
   font-size: 25px
 }
+.navbar-page
+{
+  color: white;
+  margin-left: 46%;
+  margin-top: 10px;
+  font-size: 25px
+}
 .color
 {
   background:linear-gradient(#1e1e2f,#1e1e2e)
@@ -58,4 +65,10 @@ img
 {
   font-size: 13px;
   text-align: center;
+}
+
+.notification{
+  position: absolute;
+  right: 100px;
+  color: #ff512f;
 }

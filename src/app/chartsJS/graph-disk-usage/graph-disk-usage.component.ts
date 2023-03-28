@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { resSubject } from "../../services/api-server.service";
+import { resSubject } from "../../services/api-dashboard.service";
 import { Chart } from "chart.js";
+import { NavigationBarComponent } from "../../components/navigation-bar/navigation-bar.component"
 
 @Component({
   selector: 'app-graph-disk-usage',
@@ -10,6 +11,7 @@ import { Chart } from "chart.js";
 export class GraphDiskUsageComponent implements OnInit {
 
   chartDiskUsage: any = [];
+  notifdiskusage: any[] = [];
 
   getGraphDiskUsage() {
     resSubject.subscribe(res => {
@@ -20,6 +22,11 @@ export class GraphDiskUsageComponent implements OnInit {
       let freediskusage = res.body.graph_disk_usage.map((test: any) => test.free);
 
       const backgroundcolor = [];
+      this.notifdiskusage = namediskusage
+
+      localStorage.setItem('notification', String(this.notifdiskusage))
+      // @ts-ignore
+      localStorage.setItem('notification', String(localStorage.getItem('notification').concat(",100")))
 
       for(let i = 0; i < percdiskusage.length; i++) {
         if (percdiskusage[i] < 80) {backgroundcolor.push('green') }

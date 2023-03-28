@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
 import { CognitoService } from "../../services/cognito.service";
 import { BnNgIdleService } from "bn-ng-idle";
@@ -11,14 +11,17 @@ import { BnNgIdleService } from "bn-ng-idle";
 
 export class NavigationBarComponent implements OnInit {
 
-  ExpirationTime = 100000; // 8H = 28800000 // 10S = 10000
-  CheckInterval = 10000; // 60S = 60000 // 10S = 10000
+  ExpirationTime = 28800000; // 8H = 28800000 // 100S = 100000
+  CheckInterval = 60000; // 60S = 60000 // 10S = 10000
   intervalID: any;
+  notification: any[] = [];
   constructor(private router: Router, private cognitoService: CognitoService, private bnIdle: BnNgIdleService) {}
 
   ngOnInit(): void {
     this.getUserDetails();
     this.initInterval();
+
+    //console.log(this.notification)
   }
   private getUserDetails() {
     this.cognitoService.getUser()
@@ -37,7 +40,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   Idle(){
-    this.bnIdle.startWatching(30).subscribe((isTimedOut: Boolean) => {
+    this.bnIdle.startWatching(60).subscribe((isTimedOut: Boolean) => {
       if (isTimedOut) {
         console.log('session expired');
         this.router.navigate(['/sign-in']).then(r => this.bnIdle.stopTimer());
@@ -65,5 +68,11 @@ export class NavigationBarComponent implements OnInit {
       this.stop()
       this.Idle()
     }
+  }
+
+  getNotification() {
+   // @ts-ignore
+    this.notification = localStorage.getItem('notification').split(',')
+    console.log(this.notification);
   }
 }

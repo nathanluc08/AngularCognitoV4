@@ -30,7 +30,7 @@ export class CognitoService {
     return Auth.signOut();
   }
 
-  public getToken(){
+  public getToken() {
     return Auth.currentSession()
   }
 }
