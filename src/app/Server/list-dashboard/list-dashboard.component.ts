@@ -7,10 +7,10 @@ export interface Section {
 }
 @Component({
   selector: 'app-list-server',
-  templateUrl: './list-server.component.html',
-  styleUrls: ['./list-server.component.scss']
+  templateUrl: './list-dashboard.component.html',
+  styleUrls: ['./list-dashboard.component.scss']
 })
-export class ListServerComponent implements OnInit {
+export class ListDashboardComponent implements OnInit {
 
   listserver: any[] =[];
   constructor(private _apiServer:ApiDashboardService) { }
@@ -29,19 +29,4 @@ export class ListServerComponent implements OnInit {
 
     })
   }
-
-  folders: Section[] = [
-    {
-      name: 'test',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
 }

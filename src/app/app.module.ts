@@ -31,9 +31,14 @@ import { ApiDashboardService } from "./services/api-dashboard.service";
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
 import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
 import { BnNgIdleService } from "bn-ng-idle";
-import { ListServerComponent } from './Server/list-server/list-server.component';
+import { ListDashboardComponent } from './Server/list-dashboard/list-dashboard.component';
 import { DashboardServerComponent } from './Server/dashboard-server/dashboard-server.component';
 import { CardComponent } from './card/card.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatChipsModule} from "@angular/material/chips";
+import { TableServerComponent } from './Server/table-server/table-server.component';
 
 @NgModule({
   declarations: [
@@ -48,31 +53,36 @@ import { CardComponent } from './card/card.component';
     DashboardChartJSComponent,
     GraphDBSize2Component,
     GraphDiskUsageComponent,
-    ListServerComponent,
+    ListDashboardComponent,
     DashboardServerComponent,
     CardComponent,
+    TableServerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    LayoutModule,
-    MatSidenavModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    HttpClientModule,
-    MatAutocompleteModule,
-    MatInputModule,
-    MatFormFieldModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        MatIconModule,
+        LayoutModule,
+        MatSidenavModule,
+        MatListModule,
+        MatGridListModule,
+        MatCardModule,
+        HttpClientModule,
+        MatAutocompleteModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatChipsModule,
+    ],
   providers: [ApiDashboardService, BnNgIdleService],
   bootstrap: [AppComponent],
 })
