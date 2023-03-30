@@ -1,9 +1,15 @@
 table {
   width: 100%;
 }
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
 .green-chip{
   background-color: #00FF00;
 }
+
 .red-chip{
   background-color: #FF0000;
 }
