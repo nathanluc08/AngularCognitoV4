@@ -31,7 +31,6 @@ import { ApiDashboardService } from "./services/api-dashboard.service";
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
 import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
 import { BnNgIdleService } from "bn-ng-idle";
-import { ListDashboardComponent } from './Server/list-dashboard/list-dashboard.component';
 import { DashboardServerComponent } from './Server/dashboard-server/dashboard-server.component';
 import { CardComponent } from './card/card.component';
 import { MatTableModule } from '@angular/material/table';
@@ -53,7 +52,6 @@ import { TableServerComponent } from './Server/table-server/table-server.compone
     DashboardChartJSComponent,
     GraphDBSize2Component,
     GraphDiskUsageComponent,
-    ListDashboardComponent,
     DashboardServerComponent,
     CardComponent,
     TableServerComponent,
