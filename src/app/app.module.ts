@@ -38,6 +38,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatChipsModule} from "@angular/material/chips";
 import { TableServerComponent } from './Server/table-server/table-server.component';
+import { TableDatabasesComponent } from './Server/table-databases/table-databases.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -55,32 +58,35 @@ import { TableServerComponent } from './Server/table-server/table-server.compone
     DashboardServerComponent,
     CardComponent,
     TableServerComponent,
+    TableDatabasesComponent,
+    ProfilesComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatProgressSpinnerModule,
-        MatIconModule,
-        LayoutModule,
-        MatSidenavModule,
-        MatListModule,
-        MatGridListModule,
-        MatCardModule,
-        HttpClientModule,
-        MatAutocompleteModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatChipsModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatChipsModule,
+    MatSelectModule,
+  ],
   providers: [ApiDashboardService, BnNgIdleService],
   bootstrap: [AppComponent],
 })

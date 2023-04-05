@@ -1,0 +1,64 @@
+form{
+  height: 700px;
+  width: 900px;
+  background-color: rgba(255,255,255,0.13);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+}
+form *{
+  font-family: 'Poppins',sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  border: none;
+}
+form h3{
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 50px;
+  text-align: center;
+}
+label{
+  font-size: 16px;
+  font-weight: 500;
+}
+input{
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+mat-select{
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+button{
+  margin-top: 30px;
+  width: 102%;
+  background:linear-gradient(#1e1e2f,#1e1e24);
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.my-card {
+  box-sizing: border-box;
+  background: transparent;
+  width: 100%;
+}

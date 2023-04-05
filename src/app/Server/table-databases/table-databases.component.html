@@ -1,0 +1,85 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!-- UUID Column -->
+  <ng-container matColumnDef="uuid">
+    <th mat-header-cell  *matHeaderCellDef mat-sort-header sortActionDescription="Sort by UUID"> UUID </th>
+    <td mat-cell *matCellDef="let element"> {{element.db_uuid}} </td>
+  </ng-container>
+
+  <!-- HostName Column -->
+  <ng-container matColumnDef="hostname">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by HostName"> HostName </th>
+    <td mat-cell *matCellDef="let element"> {{element.hostname_fqdn}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name"> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Status"> Status </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-chip-list>
+        <mat-chip *ngIf="element.state==='RUNNING'" class="green-chip">{{element.state}}</mat-chip>
+        <mat-chip *ngIf="element.state==='Unknown'" class="red-chip">{{element.state}}</mat-chip>
+        <mat-chip *ngIf="element.state==='UNREACHABLE: MISSING CREDENTIALS'" class="blue-chip">{{element.state}}</mat-chip>
+        <mat-chip *ngIf="element.state==='UNREACHABLE'" class="blue-chip">{{element.state}}</mat-chip>
+      </mat-chip-list>
+    </td>
+  </ng-container>
+
+  <!-- Version Column -->
+  <ng-container matColumnDef="version">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Version"> Version </th>
+    <td mat-cell *matCellDef="let element"> {{element.db_version}} </td>
+  </ng-container>
+
+  <!-- Role Column -->
+  <ng-container matColumnDef="role">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Role"> Role </th>
+    <td mat-cell *matCellDef="let element"> {{element.database_role}} </td>
+  </ng-container>
+
+  <!-- Type Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Type"> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.db_type}} </td>
+  </ng-container>
+
+  <!-- Last Seen Column -->
+  <ng-container matColumnDef="lastseen">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Last Seen"> Last Seen </th>
+    <td mat-cell *matCellDef="let element"> {{element.last_seen}} </td>
+  </ng-container>
+
+  <!-- Creation Column -->
+  <ng-container matColumnDef="create">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Create"> Create </th>
+    <td mat-cell *matCellDef="let element"> {{element.create_date}} </td>
+  </ng-container>
+
+  <!-- Backup Dump Column -->
+  <ng-container matColumnDef="backupdump">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Backup Dump"> Backup Dump </th>
+    <td mat-cell *matCellDef="let element"> {{element.Backup_dump}} </td>
+  </ng-container>
+
+  <!-- Backup Continuous Column -->
+  <ng-container matColumnDef="backupcontinuous">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Backup Continuous"> Backup Continuous </th>
+    <td mat-cell *matCellDef="let element"> {{element.Backup_continous}} </td>
+  </ng-container>
+
+  <!-- Backup Standby Column -->
+  <ng-container matColumnDef="backupstandby">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Backup Standby"> Backup Standby </th>
+    <td mat-cell *matCellDef="let element"> {{element.Backup_standby}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSize]="10" showFirstLastButtons></mat-paginator>

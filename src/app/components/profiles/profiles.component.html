@@ -1,0 +1,125 @@
+<form>
+  <h3>Votre Profil</h3>
+  <mat-grid-list cols="2" rowHeight="100px">
+
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label>Salutations</label>
+        </mat-card-title>
+        <mat-card-content>
+          <mat-select value="{{this.user.contact_salutation_id}}" id="salutation" #inputSalutation>
+          <mat-option value="1">Mr</mat-option>
+          <mat-option value="2">Ms</mat-option>
+          <mat-option value="3">Dr</mat-option>
+          <mat-option value="4">Pr</mat-option>
+        </mat-select>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label>Adresse Mail</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="email" name="email" id="email" placeholder="Adresse Mail" value="{{this.user.email}}" [disabled]="true" #inputEmail>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="prenom">Prénom</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="{{this.user.firstname}}" #inputPrenom>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="nom">Nom</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="nom" id="nom" placeholder="Nom" value="{{this.user.lastname}}" [required]="true" #inputNom>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="mobile">Téléphone Mobile</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="tel" name="mobile" id="mobile" placeholder="Téléphone Mobile" value="{{this.user.mobile_number}}" #inputMobile>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="fixe">Téléphone Fixe</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="tel" name="fixe" id="fixe" placeholder="Téléphone Fixe" value="{{this.user.phone_number}}" #inputFixe>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label>Appel</label>
+        </mat-card-title>
+        <mat-card-content>
+          <mat-select value="{{this.user.prefered_call_method}}" id="call" #inputCall>
+            <mat-option value="2">Telegram</mat-option>
+            <mat-option value="4">Signal</mat-option>
+            <mat-option value="5">Viber</mat-option>
+            <mat-option value="1">Mobile</mat-option>
+            <mat-option value="3">Whatsapp</mat-option>
+          </mat-select>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label>Notification</label>
+        </mat-card-title>
+        <mat-card-content>
+          <mat-select value="{{this.user.prefered_notify_method}}" id="notification" #inputNotification>
+            <mat-option value="2">Telegram</mat-option>
+            <mat-option value="4">Signal</mat-option>
+            <mat-option value="5">Viber</mat-option>
+            <mat-option value="1">Mobile</mat-option>
+            <mat-option value="3">Whatsapp</mat-option>
+          </mat-select>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="my-card">
+        <mat-card-content>
+          <div style="text-align:center">
+            <button
+              mat-raised-button
+              (click)="Save(inputSalutation.value, inputEmail.value, inputPrenom.value, inputNom.value, inputFixe.value, inputMobile.value, inputCall.value, inputNotification.value)">
+              Sauvegarder
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</form>

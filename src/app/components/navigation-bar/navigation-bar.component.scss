@@ -16,6 +16,8 @@ img
 .navbar-dashboard
 {
   color: white;
+  position: relative;
+  text-align: center;
   margin-left: 20px;
   margin-top: 10px;
   font-size: 25px
@@ -34,7 +36,6 @@ img
 
 .main-panel
 {
-  position: relative;
   height: 100%;
   width: 100%;
   border-top: 5px solid;

@@ -4,6 +4,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { NavigationBarComponent } from "./components/navigation-bar/navigation-bar.component";
 import { DashboardChartJSComponent } from "./chartsJS/dashboardChartJS/dashboard-chartjs.component";
 import { DashboardServerComponent } from "./Server/dashboard-server/dashboard-server.component";
+import { ProfilesComponent } from "./components/profiles/profiles.component";
 
 const routes: Routes = [
   { path:'navbar', component: NavigationBarComponent,
@@ -12,6 +13,7 @@ const routes: Routes = [
         { path:'', redirectTo:'dashboardChartJS', pathMatch:'full' },
         { path:'dashboardChartJS', component: DashboardChartJSComponent },
         { path:'dashboardServer', component: DashboardServerComponent },
+        { path:'profiles', component: ProfilesComponent },
       ]
   },
   { path:'sign-in', component: SignInComponent },
