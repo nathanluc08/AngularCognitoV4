@@ -3,7 +3,7 @@ name: CarteSoft-Dashboard
 on:
   push:
     branches:
-    - main
+    - prod
 
 jobs:
   deploy:
