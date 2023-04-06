@@ -10,6 +10,7 @@ import { CognitoService } from 'src/app/services/cognito.service';
 })
 export class SignInComponent implements OnInit {
   user: any;
+  alertTitre: string = '';
   alertMessage: string = '';
   showAlert: boolean = false;
   isLoading: boolean = false;
@@ -29,17 +30,18 @@ export class SignInComponent implements OnInit {
         this.router.navigate(['/navbar']);
       })
       .catch((error:any) => {
-        this.displayAlert(error.message);
+        this.displayAlert("Erreur Avec Cognito", error.message);
       })
     }
     else
     {
-      this.displayAlert("Adresse Mail Ou Mot De Passe Invalide");
+      this.displayAlert("Erreur Lors De La Connection","Adresse Mail Ou Mot De Passe Invalide");
     }
   }
 
-  private displayAlert(message: string) {
-    this.alertMessage = message;
+  private displayAlert(messageTitre: string, messageAlert: string) {
+    this.alertMessage = messageAlert;
+    this.alertTitre = messageTitre;
     this.showAlert = true;
   }
 

@@ -23,5 +23,5 @@
     </div>
 
   </form>
-  <app-message-modal *ngIf="showAlert" (modalClose)="showAlert=false" [message]="alertMessage"></app-message-modal>
+  <app-message-modal *ngIf="showAlert" (modalClose)="showAlert=false" [titre]="alertTitre" [message]="alertMessage"></app-message-modal>
 </body>
