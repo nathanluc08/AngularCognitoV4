@@ -2,6 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
 import { CognitoService } from "../../services/cognito.service";
 import { BnNgIdleService } from "bn-ng-idle";
+import {group} from "@angular/animations";
+import {ApiUserStatusService, resSubject} from "../../services/api-userstatus.service";
+import {ApiUserService} from "../../services/api-user.service";
 
 @Component({
   selector: 'app-navigation-bar',
@@ -15,7 +18,10 @@ export class NavigationBarComponent implements OnInit {
   CheckInterval = 60000; // 60S = 60000 // 10S = 10000
   intervalID: any;
   notification: any[] = [];
-  constructor(private router: Router, private cognitoService: CognitoService, private bnIdle: BnNgIdleService) {}
+  alertTitre: string = '';
+  alertMessage: string = '';
+  showAlert: boolean = false;
+  constructor(private router: Router, private _apiuserstatus:ApiUserStatusService, private cognitoService: CognitoService, private bnIdle: BnNgIdleService) {}
 
   ngOnInit(): void {
     this.getUserDetails();
@@ -74,5 +80,36 @@ export class NavigationBarComponent implements OnInit {
    // @ts-ignore
     this.notification = localStorage.getItem('notification').split(',')
     console.log(this.notification);
+  }
+
+  openSetting() {
+    this._apiuserstatus.getApi();
+    resSubject.subscribe(res => {
+      if ( res.body.admin ) {
+        this.displayAlert("Paramètres","Vous êtes Administrateur");
+      }
+      else if (res.body.owner) {
+        this.displayAlert("Paramètres","Vous êtes Owner");
+      }
+      else {
+        this.displayAlert("Paramètres","Vous êtes Simple User");
+      }
+    })
+
+    /*this.cognitoService.getGroup().then((group: any) => {
+      console.log(group)
+      if (group == 'admin') {
+        this.displayAlert("Paramètres","Vous êtes Administrateur");
+        console.log("group")
+      }
+      else if (group == 'user') {
+        this.displayAlert("Paramètres","Vous êtes User");
+      }
+    })*/
+  }
+  private displayAlert(messageTitre: string, messageAlert: string) {
+    this.alertMessage = messageAlert;
+    this.alertTitre = messageTitre;
+    this.showAlert = true;
   }
 }

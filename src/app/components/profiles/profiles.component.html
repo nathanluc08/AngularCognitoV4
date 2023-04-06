@@ -5,7 +5,7 @@
     <mat-grid-tile [colspan]="2">
       <mat-card class="my-card">
         <mat-card-title>
-          <label>Salutations</label>
+          <label>Salutations *</label>
         </mat-card-title>
         <mat-card-content>
           <mat-select value="{{this.user.contact_salutation_id}}" id="salutation" #inputSalutation>
@@ -21,7 +21,7 @@
     <mat-grid-tile [colspan]="2">
       <mat-card class="my-card">
         <mat-card-title>
-          <label>Adresse Mail</label>
+          <label>Adresse Mail *</label>
         </mat-card-title>
         <mat-card-content>
           <input type="email" name="email" id="email" placeholder="Adresse Mail" value="{{this.user.email}}" [disabled]="true" #inputEmail>
@@ -32,7 +32,7 @@
     <mat-grid-tile [colspan]="1">
       <mat-card class="my-card">
         <mat-card-title>
-          <label for="prenom">Prénom</label>
+          <label for="prenom">Prénom *</label>
         </mat-card-title>
         <mat-card-content>
           <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="{{this.user.firstname}}" #inputPrenom>
@@ -43,7 +43,7 @@
     <mat-grid-tile [colspan]="1">
       <mat-card class="my-card">
         <mat-card-title>
-          <label for="nom">Nom</label>
+          <label for="nom">Nom *</label>
         </mat-card-title>
         <mat-card-content>
           <input type="text" name="nom" id="nom" placeholder="Nom" value="{{this.user.lastname}}" [required]="true" #inputNom>
@@ -54,7 +54,7 @@
     <mat-grid-tile [colspan]="1">
       <mat-card class="my-card">
         <mat-card-title>
-          <label for="mobile">Téléphone Mobile</label>
+          <label for="mobile">Téléphone Mobile *</label>
         </mat-card-title>
         <mat-card-content>
           <input type="tel" name="mobile" id="mobile" placeholder="Téléphone Mobile" value="{{this.user.mobile_number}}" #inputMobile>
@@ -76,7 +76,7 @@
     <mat-grid-tile [colspan]="1">
       <mat-card class="my-card">
         <mat-card-title>
-          <label>Appel</label>
+          <label>Appel *</label>
         </mat-card-title>
         <mat-card-content>
           <mat-select value="{{this.user.prefered_call_method}}" id="call" #inputCall>
@@ -93,7 +93,7 @@
     <mat-grid-tile [colspan]="1">
       <mat-card class="my-card">
         <mat-card-title>
-          <label>Notification</label>
+          <label>Notification *</label>
         </mat-card-title>
         <mat-card-content>
           <mat-select value="{{this.user.prefered_notify_method}}" id="notification" #inputNotification>
@@ -123,3 +123,4 @@
 
   </mat-grid-list>
 </form>
+<app-message-modal *ngIf="showAlert" (modalClose)="showAlert=false" [titre]="alertTitre" [message]="alertMessage"></app-message-modal>

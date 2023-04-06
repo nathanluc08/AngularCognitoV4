@@ -19,9 +19,11 @@
         <button mat-menu-item class="item" routerLink="/navbar/dashboardChartJS">ChartJS</button>
         <button mat-menu-item class="item" routerLink="/navbar/dashboardServer">Server</button>
         <button mat-menu-item class="item" routerLink="/navbar/profiles">Profils</button>
+        <button mat-menu-item class="item" (click)="openSetting()">Paramètres</button>
         <mat-divider></mat-divider>
         <button mat-menu-item class="item" (click)="signOutWithCognito()">Déconnexion</button>
       </mat-menu>
     </mat-toolbar>
+  <app-message-modal *ngIf="showAlert" (modalClose)="showAlert=false" [titre]="alertTitre" [message]="alertMessage"></app-message-modal>
   <router-outlet></router-outlet>
 </mat-sidenav-container>
