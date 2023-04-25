@@ -1,0 +1,60 @@
+<div class="grid-container">
+  <div class="dashboard">Server</div>
+  <mat-grid-list cols="3" rowHeight="350px">
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+      <app-card title="Table DataBases">
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+          <!-- UUID Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell  *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Email"> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+
+          <!-- HostName Column -->
+          <ng-container matColumnDef="lastname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by LastName"> LastName </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="firstname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by FirstName"> FirstName </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+          </ng-container>
+
+          <!-- UUID Column -->
+          <ng-container matColumnDef="company_id">
+            <th mat-header-cell  *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Company"> Company </th>
+            <td mat-cell *matCellDef="let element"> {{element.company_id}} </td>
+          </ng-container>
+
+          <!-- HostName Column -->
+          <ng-container matColumnDef="permission">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Permission"> Permission </th>
+            <td mat-cell *matCellDef="let element"> {{element.permission}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="association">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Association"> Association </th>
+            <td mat-cell *matCellDef="let element"> {{element.association}} </td>
+          </ng-container>
+
+          <!-- Choice Column -->
+
+          <ng-container matColumnDef="choice">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button id="Edit" (click)="openDialog(element)"><mat-icon>edit</mat-icon></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

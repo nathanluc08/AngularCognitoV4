@@ -1,0 +1,32 @@
+<form>
+  <h3>Modification user</h3>
+
+  <label>Nom</label>
+  <input placeholder="Nom" matInput value="{{Data.lastname}}" [disabled]="true">
+
+  <label>Prénom</label>
+  <input placeholder="Prénom" matInput value="{{Data.firstname}}" [disabled]="true">
+
+  <label>Email</label>
+  <input placeholder="Email" matInput value="{{Data.email}}" [disabled]="true">
+
+  <label>Permission</label>
+  <mat-select value="{{Data.permission}}" #permission>
+    <mat-option value="user">User</mat-option>
+    <mat-option value="admin">Admin</mat-option>
+    <mat-option value="owner">Owner</mat-option>
+  </mat-select>
+
+  <label>Association</label>
+  <mat-select value="{{Data.association}}" #association>
+    <mat-option value="Approved">Approved</mat-option>
+    <mat-option value="Waiting for approval">Waiting For Approval</mat-option>
+    <mat-option value="Refused">Refused</mat-option>
+    <mat-option value="Rejected">Rejected</mat-option>
+  </mat-select>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="doAction(permission.value, association.value)">Save</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  </div>
+</form>

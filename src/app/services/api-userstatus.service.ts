@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CognitoService } from "./cognito.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { CognitoService } from "./cognito.service";
 import { Subject } from "rxjs";
 
 export const resSubject = new Subject<any>();
@@ -8,9 +8,7 @@ export const resSubject = new Subject<any>();
   providedIn: 'root'
 })
 export class ApiUserStatusService {
-
   constructor( private cognitoService: CognitoService, private _http:HttpClient) { }
-
   public getApi() {
     this.cognitoService.getToken().then(session => {
       let TokenCognito = session.getIdToken().getJwtToken();

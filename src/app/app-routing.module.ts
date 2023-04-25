@@ -5,6 +5,8 @@ import { NavigationBarComponent } from "./components/navigation-bar/navigation-b
 import { DashboardChartJSComponent } from "./chartsJS/dashboardChartJS/dashboard-chartjs.component";
 import { DashboardServerComponent } from "./Server/dashboard-server/dashboard-server.component";
 import { ProfilesComponent } from "./components/profiles/profiles.component";
+import { UsersCompanyComponent } from "./components/users-company/users-company.component";
+import { CompanyComponent } from "./components/company/company.component";
 
 const routes: Routes = [
   { path:'navbar', component: NavigationBarComponent,
@@ -14,6 +16,8 @@ const routes: Routes = [
         { path:'dashboardChartJS', component: DashboardChartJSComponent },
         { path:'dashboardServer', component: DashboardServerComponent },
         { path:'profiles', component: ProfilesComponent },
+        { path:'usersCompany', component: UsersCompanyComponent },
+        { path:'company', component: CompanyComponent },
       ]
   },
   { path:'sign-in', component: SignInComponent },

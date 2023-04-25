@@ -74,7 +74,7 @@ export class GraphDBSizeComponent implements OnInit {
             namegraphsize1[4] = namegraphsize[i]
             dategraphsize1[f] = dategraphsize[i].substring(0, 10)
           }
-          if (uuidgraphsize[i] == "67045c03-4a02-429f-bace-25d87c559fb3" && (dategraphsize[i].indexOf("T14") != -1)) {
+          if (uuidgraphsize[i] == "a97b59f1-270e-40c3-b01a-025009fd8d7d" && (dategraphsize[i].indexOf("T14") != -1)) { //67045c03-4a02-429f-bace-25d87c559fb3
             sizegraphsize5[f] = (sizegraphsize[i] / 1048576)
             namegraphsize1[5] = namegraphsize[i]
             dategraphsize1[f] = dategraphsize[i].substring(0, 10)

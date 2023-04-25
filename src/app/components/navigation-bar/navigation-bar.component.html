@@ -1,6 +1,6 @@
 <mat-sidenav-container class="main-panel">
     <mat-toolbar class="color">
-      <div class="navbar-dashboard">DASHBOARD</div>
+      <div class="navbar-dashboard" routerLink="/navbar/dashboardChartJS" >DASHBOARD</div>
       <div class="button-exit">
         <button mat-button [matMenuTriggerFor]="exit">
           <div class="photo">
@@ -9,21 +9,23 @@
           </div>
         </button>
       </div>
-      <button mat-icon-button [matMenuTriggerFor]="notifications" (click)="getNotification()" class="notification">
+      <button mat-icon-button [matMenuTriggerFor]="notifications" (click)="this.notificationsService.afficheNotification()" class="notification">
         <mat-icon>notifications</mat-icon>
       </button>
       <mat-menu #notifications="matMenu">
-          <span mat-menu-item class="item" *ngFor="let i of this.notification"> {{ i }} </span>
+        <span mat-menu-item class="item" *ngFor="let i of this.notificationsService.afficheNotification()"> {{ i }} </span>
+        <mat-divider></mat-divider>
+        <button mat-menu-item class="item" (click)="this.notificationsService.clearNotification()">Supprimer Notifications</button>
       </mat-menu>
       <mat-menu #exit="matMenu">
         <button mat-menu-item class="item" routerLink="/navbar/dashboardChartJS">ChartJS</button>
         <button mat-menu-item class="item" routerLink="/navbar/dashboardServer">Server</button>
         <button mat-menu-item class="item" routerLink="/navbar/profiles">Profils</button>
-        <button mat-menu-item class="item" (click)="openSetting()">Paramètres</button>
+        <button mat-menu-item class="item" routerLink="/navbar/usersCompany" *ngIf="this.permission == true">Users Company</button>
+        <button mat-menu-item class="item" routerLink="/navbar/company" *ngIf="this.permission == true">Company</button>
         <mat-divider></mat-divider>
         <button mat-menu-item class="item" (click)="signOutWithCognito()">Déconnexion</button>
       </mat-menu>
     </mat-toolbar>
-  <app-message-modal *ngIf="showAlert" (modalClose)="showAlert=false" [titre]="alertTitre" [message]="alertMessage"></app-message-modal>
   <router-outlet></router-outlet>
 </mat-sidenav-container>

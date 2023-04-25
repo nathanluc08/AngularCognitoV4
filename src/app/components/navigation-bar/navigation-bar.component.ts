@@ -1,10 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { CognitoService } from "../../services/cognito.service";
 import { BnNgIdleService } from "bn-ng-idle";
-import {group} from "@angular/animations";
-import {ApiUserStatusService, resSubject} from "../../services/api-userstatus.service";
-import {ApiUserService} from "../../services/api-user.service";
+import { ApiUserStatusService, resSubject } from "../../services/api-userstatus.service";
+import { NotificationsService } from "../../services/notifications.service";
 
 @Component({
   selector: 'app-navigation-bar',
@@ -18,17 +17,15 @@ export class NavigationBarComponent implements OnInit {
   CheckInterval = 60000; // 60S = 60000 // 10S = 10000
   intervalID: any;
   notification: any[] = [];
-  alertTitre: string = '';
-  alertMessage: string = '';
-  showAlert: boolean = false;
-  constructor(private router: Router, private _apiuserstatus:ApiUserStatusService, private cognitoService: CognitoService, private bnIdle: BnNgIdleService) {}
+  permission: boolean = false;
+  constructor(private router: Router, private _apiuserstatus:ApiUserStatusService, private cognitoService: CognitoService, private bnIdle: BnNgIdleService, public notificationsService: NotificationsService) {}
 
   ngOnInit(): void {
     this.getUserDetails();
     this.initInterval();
-
-    //console.log(this.notification)
+    this.getPermission();
   }
+
   private getUserDetails() {
     this.cognitoService.getUser()
       .then((user: any) => {
@@ -76,40 +73,18 @@ export class NavigationBarComponent implements OnInit {
     }
   }
 
-  getNotification() {
-   // @ts-ignore
-    this.notification = localStorage.getItem('notification').split(',')
-    console.log(this.notification);
-  }
-
-  openSetting() {
+  getPermission(){
     this._apiuserstatus.getApi();
     resSubject.subscribe(res => {
-      if ( res.body.admin ) {
-        this.displayAlert("Paramètres","Vous êtes Administrateur");
+      if (res.body.owner) {
+        this.permission = true
       }
-      else if (res.body.owner) {
-        this.displayAlert("Paramètres","Vous êtes Owner");
+      else if (res.body.admin) {
+        this.permission = true
       }
       else {
-        this.displayAlert("Paramètres","Vous êtes Simple User");
+        this.permission = false
       }
     })
-
-    /*this.cognitoService.getGroup().then((group: any) => {
-      console.log(group)
-      if (group == 'admin') {
-        this.displayAlert("Paramètres","Vous êtes Administrateur");
-        console.log("group")
-      }
-      else if (group == 'user') {
-        this.displayAlert("Paramètres","Vous êtes User");
-      }
-    })*/
-  }
-  private displayAlert(messageTitre: string, messageAlert: string) {
-    this.alertMessage = messageAlert;
-    this.alertTitre = messageTitre;
-    this.showAlert = true;
   }
 }

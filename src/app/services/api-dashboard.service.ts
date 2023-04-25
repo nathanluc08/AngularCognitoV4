@@ -7,10 +7,8 @@ export const resSubject = new Subject<any>();
 @Injectable({
   providedIn: 'root'
 })
-
 export class ApiDashboardService {
   constructor( private cognitoService: CognitoService, private _http:HttpClient) { }
-
   public getApi() {
     this.cognitoService.getToken().then(session => {
       let TokenCognito = session.getIdToken().getJwtToken();
