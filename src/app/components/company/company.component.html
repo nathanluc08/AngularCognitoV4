@@ -1,0 +1,133 @@
+<form>
+  <h3>Votre Company</h3>
+  <mat-grid-list cols="2" rowHeight="100px">
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="nom">Nom *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="nom" id="nom" placeholder="Nom" value="{{this.company.company_name}}" #inputNom>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="tva">Numéro TVA *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="tva" id="tva" placeholder="Numéro TVA" value="{{this.company.vat_number}}" #inputTVA>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="web">Site Web *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="web" id="web" placeholder="Site Web" value="{{this.company.company_website}}" [required]="true" #inputWeb>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="mobile">Téléphone Mobile *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="tel" name="mobile" id="mobile" placeholder="Téléphone Mobile" value="{{this.company.company_phone_number}}" #inputMobile>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="fixe">Téléphone Fixe</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="tel" name="fixe" id="fixe" placeholder="Téléphone Fixe" value="{{this.company.company_fax_number}}" #inputFixe>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="adresse">Adresse *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="adresse" id="adresse" placeholder="Adresse" value="{{this.company.company_g_address}}" #inputAdresse>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="ville">Ville *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="ville" id="ville" placeholder="Ville" value="{{this.company.company_g_city}}" #inputVille>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="postal">Code Postal *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="text" name="postal" id="postal" placeholder="Code Postal" value="{{this.company.company_g_postal_code}}" #inputPostal>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label for="pays">Pays *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <mat-select value="{{this.company.company_g_country}}" id="pays" #inputPays>
+            <mat-option *ngFor="let pays of Pays" [value]="pays">{{pays}}</mat-option>
+          </mat-select>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="my-card">
+        <mat-card-title>
+          <label>Adresse Mail *</label>
+        </mat-card-title>
+        <mat-card-content>
+          <input type="email" name="email" id="email" placeholder="Adresse Mail" value="{{this.company.company_g_mail}}" #inputEmail>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="my-card">
+        <mat-card-content>
+          <div style="text-align:center">
+            <button
+              mat-raised-button
+              (click)="Save(inputNom.value, inputTVA.value, inputWeb.value, inputAdresse.value, inputVille.value, inputPostal.value, inputPays.value, inputEmail.value, inputMobile.value, inputFixe.value)">
+              Sauvegarder
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</form>
+<app-message-modal *ngIf="showAlert" (modalClose)="showAlert=false" [titre]="alertTitre" [message]="alertMessage"></app-message-modal>

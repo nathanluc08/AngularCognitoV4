@@ -17,6 +17,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from "@angular/common/http";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatSelectModule } from "@angular/material/select";
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule } from "@angular/material/chips";
 
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -27,20 +33,19 @@ import { PieDBComponent } from './chartsJS/pie-db/pie-db.component';
 import { PieServerComponent } from './chartsJS/pie-server/pie-server.component';
 import { PieDBBackupComponent } from './chartsJS/pie-dbbackup/pie-dbbackup.component';
 import { GraphDBSizeComponent } from './chartsJS/graph-dbsize/graph-dbsize.component';
-import { ApiDashboardService } from "./services/api-dashboard.service";
 import { GraphDBSize2Component } from './chartsJS/graph-dbsize2/graph-dbsize2.component';
 import { GraphDiskUsageComponent } from './chartsJS/graph-disk-usage/graph-disk-usage.component';
-import { BnNgIdleService } from "bn-ng-idle";
 import { DashboardServerComponent } from './Server/dashboard-server/dashboard-server.component';
 import { CardComponent } from './card/card.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import {MatChipsModule} from "@angular/material/chips";
 import { TableServerComponent } from './Server/table-server/table-server.component';
 import { TableDatabasesComponent } from './Server/table-databases/table-databases.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
-import {MatSelectModule} from "@angular/material/select";
+import { UsersCompanyComponent } from './components/users-company/users-company.component';
+import { DialogUsersCompanyComponent } from './dialog-users-company/dialog-users-company.component';
+import { CompanyComponent } from './components/company/company.component';
+import { BnNgIdleService } from "bn-ng-idle";
+import { ApiDashboardService } from "./services/api-dashboard.service";
+import { NgOptimizedImage } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -60,33 +65,38 @@ import {MatSelectModule} from "@angular/material/select";
     TableServerComponent,
     TableDatabasesComponent,
     ProfilesComponent,
+    UsersCompanyComponent,
+    DialogUsersCompanyComponent,
+    CompanyComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    LayoutModule,
-    MatSidenavModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    HttpClientModule,
-    MatAutocompleteModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatChipsModule,
-    MatSelectModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        MatIconModule,
+        LayoutModule,
+        MatSidenavModule,
+        MatListModule,
+        MatGridListModule,
+        MatCardModule,
+        HttpClientModule,
+        MatAutocompleteModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatChipsModule,
+        MatSelectModule,
+        NgOptimizedImage,
+        MatDialogModule
+    ],
   providers: [ApiDashboardService, BnNgIdleService],
   bootstrap: [AppComponent],
 })
